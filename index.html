@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>BOLIDE</title>
+    
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="./favico/16x16_00000.png" id="favicon">
+    
+    <script src="https://cdn.glitch.com/099dfd93-5536-4f96-9eac-95f0fe1d4563%2FWebGL.js?1556802188038"></script>
+    <script src="https://threejs.org/build/three.min.js"></script>
+    <script src="https://cdn.glitch.com/099dfd93-5536-4f96-9eac-95f0fe1d4563%2FLoaderSupport.js?1556196480104"></script>
+    <script src="https://cdn.glitch.com/099dfd93-5536-4f96-9eac-95f0fe1d4563%2FOBJLoader2.js?1556196480494"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="/script.js" defer></script>
+  </head>  
+  
+  <body>
+    <div id="canvas">
+    </div>
+    
+    <div id="logo-bolide">
+      <img src="http://bolidarium.krauss.fr/assets/logo-bolide.svg"
+           onmouseover="document.getElementById('legend').style.display = 'block';" 
+	  			 onmouseout="document.getElementById('legend').style.display = 'none'">
+    </div>
+    
+    <div id="info" class="ui"> 
+      Info
+      <img src="http://bolidarium.krauss.fr/assets/flag.svg">
+    </div>
+    
+    <div id="projects" class="ui"> 
+      Projets
+      <img src="https://cdn.glitch.com/6c770016-8fe2-46ab-8ad5-80d6cd6f76dd%2Fexternal-arrow.svg?v=1592514846627">
+    </div>
+    
+    <div id="projects-list" class="hidden ui">
+      <ul>
+        <li>
+          <a href="http://bolidarium.bolide.international" target="_blank">
+            Bolidarium
+            <img src="https://cdn.glitch.com/6c770016-8fe2-46ab-8ad5-80d6cd6f76dd%2Fexternal-link.svg?v=1592510037180">
+          </a>
+        </li>
+        <li>
+          <a href="http://bolide.eestienne.info" target="_blank">
+            Musiquer.exe
+            <img src="https://cdn.glitch.com/6c770016-8fe2-46ab-8ad5-80d6cd6f76dd%2Fexternal-link.svg?v=1592510037180">
+          </a>
+        </li>
+      </ul>
+    </div>
+    
+    <div id="link-insta">
+      @<a href="https://www.instagram.com/bolide.international/" target="_blank">bolide.international</a>
+    </div>
+    
+    <div id="bg">
+    </div>
+    
+    <div id="about">
+      <img id="close" src="http://bolidarium.krauss.fr/assets/close.svg">
+      <div id="container">
+        <div id="description">
+          <p>
+            <img src="http://bolidarium.krauss.fr/assets/logo-bolide.svg"> est un collectif multidisciplinaire de jeunes designers dont l'ambition est de faire converger design graphique, interactif et sonore dans la conception
+            d’installations interactives. 
+          </p>
+        </div>
+        <div class="title">
+          <p>
+            Manifesto
+          </p>
+        </div>
+        <div id="manifesto">
+          <p>
+            Honnêteté et spontanéité nous tiennent à coeur dans la création numérique. Nous voulons être radicaux tout en partant d’intuitions franches, afin de les développer avec des partis pris créatifs forts. Nous nous rejoignons sur l’approche multidisciplinaire et expérimentale de nos démarches.
+          </p>
+          <p>
+            De part l’influence des médias et de la technologie, le numérique ne cesse de façonner notre société et nos identités. Les pratiques évoluent de jour en jour, ce qui nous pousse à nous interroger sur notre démarche de designers. Nos réflexions sont ancrées dans une envie concrète de faire, de fabriquer et de créer face aux enjeux contemporains, qu'ils soient technologiques, sociaux ou esthétiques. 
+          </p>
+          <p>
+            Nous intervenons dans des domaines qui nous touchent et nous passionnent, au croisement des rapports entre design, musique et technologie. 
+          </p>
+        </div>
+        <div class="title">
+          <p>
+            CREW
+          </p>
+        </div>
+        <div id="members">
+          <div class="row">
+            <div class="col">
+              <p>
+                <a class="name" href="http://marinscart.fr" target="_blank">
+                  Marin SCART
+                  <img src="https://cdn.glitch.com/6c770016-8fe2-46ab-8ad5-80d6cd6f76dd%2Fexternal-link.svg?v=1592510037180">
+                </a>
+              </p>
+              <p>
+                Passionné par la question de l’interface de création musicale, Marin est designer graphique et un avide utilisateur de formes et de synthétiseurs modulaires en tous genres.
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                <a class="name" href="http://instagram.com/minhbout2" target="_blank">
+                  Minh BOUTIN
+                  <img src="https://cdn.glitch.com/6c770016-8fe2-46ab-8ad5-80d6cd6f76dd%2Fexternal-link.svg?v=1592510037180">
+                </a>
+              </p>
+              <p>
+                Musicienne et designer transversale, Minh souhaite concilier design et musique en exploitant les potentialités expressives des technologies et donner forme à un « design performatif ». 
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                <a class="name" href="http://krauss.fr" target="_blank">
+                  Jean-Baptiste KRAUSS
+                  <img src="https://cdn.glitch.com/6c770016-8fe2-46ab-8ad5-80d6cd6f76dd%2Fexternal-link.svg?v=1592510037180">
+                </a>
+              </p>
+              <p>
+                Audiophile fasciné par la technique, Jean-Baptiste est un designer graphique animé par ses intuitions, qui explore autant le travail pointu de la 3D que les références obscures d’internet.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="title">
+          <p>
+            LIENS & CONTACT
+          </p>
+        </div>
+        <div id="links">
+          <p>
+            @<a href="http://instagram.com/bolide.international" target="_blank">bolide.international</a>
+          </p>
+          <p>
+            hello@bolide.international
+          </p>
+        </div> 
+      </div>
+    </div>
+    
+    <div id="legend" style="display: none">
+      <p style="margin-bottom: 0.8em;">
+        <b>bolide</b> <span class="phonetic">\bɔ.lid\</span>
+      </p>
+      <p>
+        Corps célèste disparaîssant trop vite pour qu’on ne le comprenne et dont l’éclat dépasse celui des planètes.
+      </p>
+    </div>
+  
+    <script>
+      if ( WEBGL.isWebGLAvailable() === false ) {
+				document.body.appendChild( WEBGL.getWebGLErrorMessage() );
+			} 
+      
+			// scene size
+			var WIDTH = window.innerWidth;
+			var HEIGHT = window.innerHeight;
+      
+      //mouse
+      var mouseX = 0, mouseY = 0;
+			var windowHalfX = window.innerWidth / 2;
+			var windowHalfY = window.innerHeight / 2;
+      
+      // group 
+      var group; 
+      
+			// camera
+			var camera, scene, renderer;
+      
+      // mouse
+      var mousePosition = {
+          x: 0,
+          y: 0,
+          dx: 0,
+          dy: 0,
+          interpolatedX: 0,
+          interpolatedY: 0
+      };
+      
+			init();
+			animate();
+
+      
+			function init() {
+
+				var container = document.getElementById( 'canvas' );
+
+				// renderer
+				renderer = new THREE.WebGLRenderer( { antialias: true } );
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( WIDTH, HEIGHT );
+        renderer.setClearColor( 0x000000, 1);
+				container.appendChild( renderer.domElement );
+
+				// scene
+				scene = new THREE.Scene();
+        
+        // group
+        group = new THREE.Group();
+        scene.add( group );
+        
+				// camera
+        camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 50000 );
+				camera.position.z = - 500;
+        camera.position.y = 2000;
+        camera.position.x = 100;
+        
+        scene.add( camera );
+        
+        // texture
+        var textureLoader = new THREE.TextureLoader();
+        
+        var matcap1 = textureLoader.load( 'https://cdn.glitch.com/099dfd93-5536-4f96-9eac-95f0fe1d4563%2Fmatcap02.png?1556205431780', function () {
+			    matcap1.encoding = THREE.sRGBEncoding;
+        } );
+        
+        // material
+        var material1 = new THREE.MeshMatcapMaterial( {
+              matcap: matcap1,
+              transparent: true,
+              opacity: 1.0,
+            } );
+        
+        // BLOB1
+        var blobLoader1 = new THREE.OBJLoader2();
+        blobLoader1.load( 
+          'https://cdn.glitch.com/f7a48dba-99e1-4f40-82a0-79978bb50343%2Ftricycle_mini.obj?v=1580227357621', 
+  
+          function( event ) {
+            geometryBlob = event.detail.loaderRootNode.children[0].geometry; 
+            
+            materialBlob2 = new THREE.MeshMatcapMaterial( {
+              matcap: matcap1,
+              transparent: true,
+              opacity: 1.0,
+            } );
+            
+        for (var u = 0; u < 4; u++){  
+          for (var y = 0; y < 4; y++){    
+            for (var i = 0; i < 4; i++){
+              blob2 = new THREE.Mesh( geometryBlob, materialBlob2 );
+
+              blob2.position.x = - 100 - 800 * y + i * 600;
+              blob2.position.y = - 100 - 800 * u + y * 500 * Math.random() * (+5 - +0) + +1;
+              blob2.position.z = - 100 - 800 * i + u * 600 * Math.random() * (+5 - +0) + +1;
+              blob2.rotation.x = Math.random() * (+2 - +0) + +1 * i;
+              blob2.rotation.y = 0;
+              blob2.rotation.z = 0;
+              var size = Math.random() * (+2.5 - +0.7) + +1;
+              blob2.scale.set( size, size, size );
+
+              group.add( blob2 );
+            };  
+          };
+        };
+
+      } );
+      
+        group.position.z = 1000;
+        
+				window.addEventListener( 'resize', onWindowResize, false );
+        document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+			}
+      
+      function onWindowResize() {
+				windowHalfX = window.innerWidth / 2;
+				windowHalfY = window.innerHeight / 2;
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+				renderer.setSize( window.innerWidth, window.innerHeight );
+			}
+      
+      // mouse position to 3D movement
+      
+      window.addEventListener( 'mousemove', function ( event ) {
+        mousePosition.x = 1 * ( ( ( 0.2 * ( event.clientX / window.innerWidth ) ) * 2 ) - 0.1 );
+        mousePosition.y = 1 * ( ( ( 0.2 * ( event.clientY / window.innerHeight ) ) * 2 ) - 0.1 );
+      }, false );
+      
+      var canvas = document.getElementById( 'container' );
+      
+      function onDocumentMouseMove( event ) {
+
+				mouseX = ( event.clientX - windowHalfX ) * 4;
+				mouseY = ( event.clientY - windowHalfY ) * 4;
+        
+			}
+      
+			function animate() {
+        
+				requestAnimationFrame( animate );
+        
+        camera.position.x += ( mouseX - camera.position.x ) * .03;
+				camera.position.y += ( - mouseY - camera.position.y ) * .03;
+
+				camera.lookAt( scene.position );
+        
+				renderer.render( scene, camera );
+        
+			}
+		</script>
+  </body>
+</html>
